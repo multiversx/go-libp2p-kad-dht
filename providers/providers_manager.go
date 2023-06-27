@@ -14,11 +14,11 @@ import (
 	logging "github.com/ipfs/go-log"
 	"github.com/jbenet/goprocess"
 	goprocessctx "github.com/jbenet/goprocess/context"
-	"github.com/libp2p/go-libp2p-kad-dht/internal"
-	"github.com/libp2p/go-libp2p/core/peer"
-	"github.com/libp2p/go-libp2p/core/peerstore"
-	peerstoreImpl "github.com/libp2p/go-libp2p/p2p/host/peerstore"
 	"github.com/multiformats/go-base32"
+	"github.com/multiversx/go-libp2p-kad-dht/internal"
+	"github.com/multiversx/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/peerstore"
+	peerstoreImpl "github.com/multiversx/go-libp2p/p2p/host/peerstore"
 )
 
 const (

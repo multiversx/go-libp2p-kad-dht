@@ -6,21 +6,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/libp2p/go-libp2p/core/network"
-	"github.com/libp2p/go-libp2p/core/peer"
-	"github.com/libp2p/go-libp2p/core/peerstore"
-	"github.com/libp2p/go-libp2p/core/routing"
+	"github.com/multiversx/go-libp2p/core/network"
+	"github.com/multiversx/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/peerstore"
+	"github.com/multiversx/go-libp2p/core/routing"
 	"github.com/stretchr/testify/require"
 
 	record "github.com/libp2p/go-libp2p-record"
-	bhost "github.com/libp2p/go-libp2p/p2p/host/basic"
-	mocknet "github.com/libp2p/go-libp2p/p2p/net/mock"
-	swarmt "github.com/libp2p/go-libp2p/p2p/net/swarm/testing"
+	bhost "github.com/multiversx/go-libp2p/p2p/host/basic"
+	mocknet "github.com/multiversx/go-libp2p/p2p/net/mock"
+	swarmt "github.com/multiversx/go-libp2p/p2p/net/swarm/testing"
 
 	//lint:ignore SA1019 TODO migrate away from gogo pb
 	"github.com/libp2p/go-msgio/protoio"
 
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
+	pb "github.com/multiversx/go-libp2p-kad-dht/pb"
 
 	u "github.com/ipfs/boxo/util"
 )

@@ -8,23 +8,23 @@ import (
 	"sync"
 	"time"
 
-	"github.com/libp2p/go-libp2p/core/network"
-	"github.com/libp2p/go-libp2p/core/peer"
-	"github.com/libp2p/go-libp2p/core/peerstore"
-	"github.com/libp2p/go-libp2p/core/routing"
+	"github.com/multiversx/go-libp2p/core/network"
+	"github.com/multiversx/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/peerstore"
+	"github.com/multiversx/go-libp2p/core/routing"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/trace"
 
 	u "github.com/ipfs/boxo/util"
 	"github.com/ipfs/go-cid"
-	"github.com/libp2p/go-libp2p-kad-dht/internal"
-	internalConfig "github.com/libp2p/go-libp2p-kad-dht/internal/config"
-	"github.com/libp2p/go-libp2p-kad-dht/netsize"
-	"github.com/libp2p/go-libp2p-kad-dht/qpeerset"
-	kb "github.com/libp2p/go-libp2p-kbucket"
 	record "github.com/libp2p/go-libp2p-record"
 	"github.com/multiformats/go-multihash"
+	"github.com/multiversx/go-libp2p-kad-dht/internal"
+	internalConfig "github.com/multiversx/go-libp2p-kad-dht/internal/config"
+	"github.com/multiversx/go-libp2p-kad-dht/netsize"
+	"github.com/multiversx/go-libp2p-kad-dht/qpeerset"
+	kb "github.com/multiversx/go-libp2p-kbucket"
 )
 
 // This file implements the Routing interface for the IpfsDHT struct.

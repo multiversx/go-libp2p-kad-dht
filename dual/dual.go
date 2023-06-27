@@ -7,18 +7,17 @@ import (
 	"fmt"
 	"sync"
 
-	dht "github.com/libp2p/go-libp2p-kad-dht"
-
 	"github.com/ipfs/go-cid"
-	kb "github.com/libp2p/go-libp2p-kbucket"
-	"github.com/libp2p/go-libp2p-kbucket/peerdiversity"
-	helper "github.com/libp2p/go-libp2p-routing-helpers"
-	ci "github.com/libp2p/go-libp2p/core/crypto"
-	"github.com/libp2p/go-libp2p/core/host"
-	"github.com/libp2p/go-libp2p/core/peer"
-	"github.com/libp2p/go-libp2p/core/protocol"
-	"github.com/libp2p/go-libp2p/core/routing"
 	ma "github.com/multiformats/go-multiaddr"
+	dht "github.com/multiversx/go-libp2p-kad-dht"
+	kb "github.com/multiversx/go-libp2p-kbucket"
+	"github.com/multiversx/go-libp2p-kbucket/peerdiversity"
+	helper "github.com/multiversx/go-libp2p-routing-helpers"
+	ci "github.com/multiversx/go-libp2p/core/crypto"
+	"github.com/multiversx/go-libp2p/core/host"
+	"github.com/multiversx/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/protocol"
+	"github.com/multiversx/go-libp2p/core/routing"
 
 	"github.com/hashicorp/go-multierror"
 )

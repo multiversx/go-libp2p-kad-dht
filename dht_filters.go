@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/libp2p/go-libp2p/core/host"
-	"github.com/libp2p/go-libp2p/core/network"
-	"github.com/libp2p/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/host"
+	"github.com/multiversx/go-libp2p/core/network"
+	"github.com/multiversx/go-libp2p/core/peer"
 
 	"github.com/google/gopacket/routing"
 	netroute "github.com/libp2p/go-netroute"
@@ -16,7 +16,7 @@ import (
 	ma "github.com/multiformats/go-multiaddr"
 	manet "github.com/multiformats/go-multiaddr/net"
 
-	dhtcfg "github.com/libp2p/go-libp2p-kad-dht/internal/config"
+	dhtcfg "github.com/multiversx/go-libp2p-kad-dht/internal/config"
 )
 
 // QueryFilterFunc is a filter applied when considering peers to dial when querying

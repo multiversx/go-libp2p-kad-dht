@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	kb "github.com/libp2p/go-libp2p-kbucket"
-	"github.com/libp2p/go-libp2p/core/event"
-	"github.com/libp2p/go-libp2p/core/peer"
+	kb "github.com/multiversx/go-libp2p-kbucket"
+	"github.com/multiversx/go-libp2p/core/event"
+	"github.com/multiversx/go-libp2p/core/peer"
 
 	"github.com/stretchr/testify/require"
 )

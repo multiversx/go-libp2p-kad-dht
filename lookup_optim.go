@@ -8,12 +8,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/libp2p/go-libp2p-kad-dht/metrics"
-	"github.com/libp2p/go-libp2p-kad-dht/netsize"
-	"github.com/libp2p/go-libp2p-kad-dht/qpeerset"
-	kb "github.com/libp2p/go-libp2p-kbucket"
-	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/multiformats/go-multihash"
+	"github.com/multiversx/go-libp2p-kad-dht/metrics"
+	"github.com/multiversx/go-libp2p-kad-dht/netsize"
+	"github.com/multiversx/go-libp2p-kad-dht/qpeerset"
+	kb "github.com/multiversx/go-libp2p-kbucket"
+	"github.com/multiversx/go-libp2p/core/peer"
 	ks "github.com/whyrusleeping/go-keyspace"
 	"gonum.org/v1/gonum/mathext"
 )

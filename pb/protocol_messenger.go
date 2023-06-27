@@ -8,11 +8,11 @@ import (
 
 	logging "github.com/ipfs/go-log"
 	recpb "github.com/libp2p/go-libp2p-record/pb"
-	"github.com/libp2p/go-libp2p/core/host"
-	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/multiformats/go-multihash"
+	"github.com/multiversx/go-libp2p/core/host"
+	"github.com/multiversx/go-libp2p/core/peer"
 
-	"github.com/libp2p/go-libp2p-kad-dht/internal"
+	"github.com/multiversx/go-libp2p-kad-dht/internal"
 )
 
 var logger = logging.Logger("dht")

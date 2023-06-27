@@ -7,12 +7,13 @@ import (
 	"github.com/ipfs/boxo/ipns"
 	ds "github.com/ipfs/go-datastore"
 	dssync "github.com/ipfs/go-datastore/sync"
-	"github.com/libp2p/go-libp2p-kad-dht/providers"
-	"github.com/libp2p/go-libp2p-kbucket/peerdiversity"
 	record "github.com/libp2p/go-libp2p-record"
-	"github.com/libp2p/go-libp2p/core/host"
-	"github.com/libp2p/go-libp2p/core/peer"
-	"github.com/libp2p/go-libp2p/core/protocol"
+	"github.com/multiversx/go-libp2p-kad-dht/imports"
+	"github.com/multiversx/go-libp2p-kad-dht/providers"
+	"github.com/multiversx/go-libp2p-kbucket/peerdiversity"
+	"github.com/multiversx/go-libp2p/core/host"
+	"github.com/multiversx/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/protocol"
 )
 
 // DefaultPrefix is the application specific prefix attached to all DHT protocols by default.
@@ -90,7 +91,7 @@ func (c *Config) ApplyFallbacks(h host.Host) error {
 				nsval["pk"] = record.PublicKeyValidator{}
 			}
 			if _, ipnsFound := nsval["ipns"]; !ipnsFound {
-				nsval["ipns"] = ipns.Validator{KeyBook: h.Peerstore()}
+				nsval["ipns"] = imports.Validator{KeyBook: h.Peerstore()}
 			}
 		} else {
 			return fmt.Errorf("the default Validator was changed without being marked as changed")

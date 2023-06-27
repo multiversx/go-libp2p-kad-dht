@@ -14,13 +14,13 @@ import (
 	"github.com/multiformats/go-multiaddr"
 	"github.com/multiformats/go-multihash"
 
-	"github.com/libp2p/go-libp2p/core/host"
-	"github.com/libp2p/go-libp2p/core/network"
-	"github.com/libp2p/go-libp2p/core/peer"
-	"github.com/libp2p/go-libp2p/core/peerstore"
-	"github.com/libp2p/go-libp2p/core/protocol"
-	"github.com/libp2p/go-libp2p/core/routing"
-	swarm "github.com/libp2p/go-libp2p/p2p/net/swarm"
+	"github.com/multiversx/go-libp2p/core/host"
+	"github.com/multiversx/go-libp2p/core/network"
+	"github.com/multiversx/go-libp2p/core/peer"
+	"github.com/multiversx/go-libp2p/core/peerstore"
+	"github.com/multiversx/go-libp2p/core/protocol"
+	"github.com/multiversx/go-libp2p/core/routing"
+	swarm "github.com/multiversx/go-libp2p/p2p/net/swarm"
 
 	"github.com/gogo/protobuf/proto"
 	u "github.com/ipfs/boxo/util"
@@ -29,14 +29,14 @@ import (
 	dssync "github.com/ipfs/go-datastore/sync"
 	logging "github.com/ipfs/go-log"
 
-	kaddht "github.com/libp2p/go-libp2p-kad-dht"
-	"github.com/libp2p/go-libp2p-kad-dht/crawler"
-	"github.com/libp2p/go-libp2p-kad-dht/internal"
-	internalConfig "github.com/libp2p/go-libp2p-kad-dht/internal/config"
-	"github.com/libp2p/go-libp2p-kad-dht/internal/net"
-	dht_pb "github.com/libp2p/go-libp2p-kad-dht/pb"
-	"github.com/libp2p/go-libp2p-kad-dht/providers"
-	kb "github.com/libp2p/go-libp2p-kbucket"
+	kaddht "github.com/multiversx/go-libp2p-kad-dht"
+	"github.com/multiversx/go-libp2p-kad-dht/crawler"
+	"github.com/multiversx/go-libp2p-kad-dht/internal"
+	internalConfig "github.com/multiversx/go-libp2p-kad-dht/internal/config"
+	"github.com/multiversx/go-libp2p-kad-dht/internal/net"
+	dht_pb "github.com/multiversx/go-libp2p-kad-dht/pb"
+	"github.com/multiversx/go-libp2p-kad-dht/providers"
+	kb "github.com/multiversx/go-libp2p-kbucket"
 
 	record "github.com/libp2p/go-libp2p-record"
 	recpb "github.com/libp2p/go-libp2p-record/pb"
@@ -332,7 +332,7 @@ func (dht *FullRT) runCrawler(ctx context.Context) {
 		kPeerMap := make(map[string]peer.ID)
 		newRt := trie.New()
 		for k, v := range m {
-			v.key = kadkey.KbucketIDToKey(kb.ConvertPeerID(k))
+			v.key = []byte(kb.ConvertPeerID(k))
 			peerAddrs[k] = v.addrs
 			kPeerMap[string(v.key)] = k
 			newRt.Add(v.key)
@@ -430,7 +430,7 @@ func (dht *FullRT) GetClosestPeers(ctx context.Context, key string) ([]peer.ID, 
 	defer span.End()
 
 	kbID := kb.ConvertKey(key)
-	kadKey := kadkey.KbucketIDToKey(kbID)
+	kadKey := []byte(kbID)
 	dht.rtLk.RLock()
 	closestKeys := kademlia.ClosestN(kadKey, dht.rt, dht.bucketSize)
 	dht.rtLk.RUnlock()

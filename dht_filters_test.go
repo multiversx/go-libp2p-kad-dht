@@ -5,11 +5,11 @@ import (
 	"net"
 	"testing"
 
-	ic "github.com/libp2p/go-libp2p/core/crypto"
-	"github.com/libp2p/go-libp2p/core/network"
-	"github.com/libp2p/go-libp2p/core/peer"
 	ma "github.com/multiformats/go-multiaddr"
 	manet "github.com/multiformats/go-multiaddr/net"
+	ic "github.com/multiversx/go-libp2p/core/crypto"
+	"github.com/multiversx/go-libp2p/core/network"
+	"github.com/multiversx/go-libp2p/core/peer"
 )
 
 func TestIsRelay(t *testing.T) {
@@ -50,6 +50,7 @@ func (m *mockConn) LocalPrivateKey() ic.PrivKey        { return nil }
 func (m *mockConn) RemotePeer() peer.ID                { return m.remote.ID }
 func (m *mockConn) RemotePublicKey() ic.PubKey         { return nil }
 func (m *mockConn) ConnState() network.ConnectionState { return network.ConnectionState{} }
+func (m *mockConn) IsClosed() bool                     { return false }
 
 func TestFilterCaching(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
